@@ -33,7 +33,7 @@ export const usePostsStore = defineStore("posts", {
     },
     movePostDown(postId: number) {
       const foundPostIndex = this.posts.findIndex((post) => post.id === postId);
-      if (foundPostIndex < 0 || foundPostIndex > this.posts.length - 1) return;
+      if (foundPostIndex < 0 || foundPostIndex >= this.posts.length - 1) return;
 
       const foundPost = this.posts[foundPostIndex];
       this.posts.splice(foundPostIndex, 1);
