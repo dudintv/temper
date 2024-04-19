@@ -28,9 +28,9 @@ historySteps.value = [
 </script>
 
 <template>
-  <section class="flex justify-between">
+  <section class="flex justify-between items-start gap-8 flex-wrap md:flex-nowrap">
     <SortableList :items="posts" />
-    <HistoryList :items="historySteps" />
+    <HistoryList :items="historySteps" class="md:flex-shrink-0" />
   </section>
 </template>
 
