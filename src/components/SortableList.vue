@@ -9,7 +9,7 @@ defineProps<{ items: Post[] }>();
   <div class="w-full">
     <h1 class="text-2xl mb-4 text-white leading-tight">Sortable Post List</h1>
     <ul class="flex flex-col gap-4 w-full items-stretch">
-      <li class="block" v-for="(post, index) in items" :key="post.id">
+      <li v-for="(post, index) in items" :key="post.id" class="bg-back rounded">
         <SortableListItem :item="post" :is-first="index === 0" :is-last="index === items.length - 1" />
       </li>
     </ul>

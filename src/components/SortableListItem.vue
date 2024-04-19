@@ -6,7 +6,7 @@ defineProps<{ item: Post; isFirst?: boolean; isLast?: Boolean }>();
 </script>
 
 <template>
-  <div class="bg-slate-100 hover:bg-white flex justify-between rounded shadow-md hover:shadow-lg transition-all">
+  <div class="bg-white/50 hover:bg-white flex justify-between rounded shadow-md hover:shadow-lg transition-all">
     <div class="flex items-center p-4">Post {{ item.id }}</div>
     <SortableButtons :hide-up="isFirst" :hide-down="isLast" @up="" @down="" />
   </div>

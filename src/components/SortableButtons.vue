@@ -4,7 +4,7 @@ const emit = defineEmits(["up", "down"]);
 </script>
 
 <template>
-  <div class="grid grid-cols-1 grid-rows-2 text-[#6357b1]">
+  <div class="grid grid-cols-1 grid-rows-2 text-primary">
     <div v-if="!hideUp" class="arrow-button row-start-1" @click="emit('up')">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
         <path

@@ -2,7 +2,7 @@
 
 <template>
   <main class="w-full mix-h-screen grid grid-cols-1 grid-rows-1">
-    <div class="diagonal-clip-path bg-[#6357b1] h-60 col-span-full row-span-full opacity-90" />
+    <div class="diagonal-clip-path bg-primary h-60 col-span-full row-span-full opacity-90" />
     <div class="container mx-auto col-span-full row-span-full z-10 px-4 py-16">
       <slot name="default" />
     </div>
