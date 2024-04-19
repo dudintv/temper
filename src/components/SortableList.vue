@@ -19,7 +19,7 @@ function movePostDown(post: Post) {
 <template>
   <div class="w-full">
     <h1 class="text-2xl mb-4 text-white leading-tight">Sortable Post List</h1>
-    <ul v-if="posts?.length" class="flex flex-col gap-4 w-full items-stretch">
+    <ul v-if="posts?.length" class="flex flex-col gap-4 w-full items-stretch" v-auto-animate>
       <li v-for="(post, index) in posts" :key="post.id" class="bg-back rounded">
         <SortableListItem
           :item="post"

@@ -7,10 +7,21 @@ const emit = defineEmits(["stepTo"]);
 </script>
 
 <template>
-  <div class="p-4 flex items-center justify-between gap-4 rounded transition-all leading-tight">
+  <div class="appear-animation p-4 flex items-center justify-between gap-4 rounded transition-all leading-tight">
     <span>Moved post {{ item.id }} from {{ item.indexFrom }} to {{ item.indexTo }}</span>
     <HistoryButton @click="emit('stepTo')" />
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.appear-animation {
+  opacity: 0;
+  animation: appear 1s ease-in-out forwards;
+}
+</style>

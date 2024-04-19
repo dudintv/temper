@@ -7,7 +7,7 @@ const postStore = usePostsStore();
 const { historySteps } = storeToRefs(postStore);
 
 function stepTo(stepId: number) {
-  console.log(stepId);
+  postStore.goTimeTravel(stepId);
 }
 </script>
 
@@ -17,14 +17,15 @@ function stepTo(stepId: number) {
     <div class="p-4 bg-back">
       <ul
         v-if="historySteps?.length"
-        class="flex flex-col bg-white/50 shadow-md hover:shadow-lg rounded overflow-clip transition-all"
+        class="flex flex-col-reverse bg-white/50 shadow-md hover:shadow-lg rounded overflow-clip transition-all"
+        v-auto-animate
       >
         <li
-          v-for="step in historySteps"
-          :key="step.id"
-          class="border-slate-200 border-b last:border-b-0 hover:bg-white"
+          v-for="(step, index) in historySteps"
+          :key="index"
+          class="border-slate-200 border-t last:border-t-0 hover:bg-white"
         >
-          <HistoryListItem :item="step" @stepTo="stepTo(step.id)" />
+          <HistoryListItem :item="step" @stepTo="stepTo(index)" />
         </li>
       </ul>
       <div v-else>

@@ -41,6 +41,17 @@ export const usePostsStore = defineStore("posts", {
 
       this.makeHistoryRecord(foundPost, foundPostIndex, foundPostIndex + 1);
     },
+    goTimeTravel(targetStep: number) {
+      const tempPosts = [...this.posts];
+      for (let i = this.historySteps.length - 1; i >= targetStep; i--) {
+        const foundPostIndex = tempPosts.findIndex((post) => post.id === this.historySteps[i].id);
+        const foundPost = tempPosts[foundPostIndex];
+        tempPosts.splice(foundPostIndex, 1);
+        tempPosts.splice(this.historySteps[i].indexFrom, 0, foundPost);
+        this.historySteps.pop();
+      }
+      this.posts = tempPosts;
+    },
   },
 });
 
