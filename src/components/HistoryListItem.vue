@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { HistoryStep } from "@/types";
+
+defineProps<{ item: HistoryStep }>();
+</script>
 
 <template>
-  <h1>HISTORY LIST ITEM</h1>
+  <pre>{{ item }}</pre>
 </template>
 
 <style lang="scss" scoped></style>

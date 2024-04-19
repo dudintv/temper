@@ -7,6 +7,24 @@ import { usePostsStore } from "@/stores/posts";
 const postStore = usePostsStore();
 const { posts, historySteps } = storeToRefs(postStore);
 await postStore.getFirstPosts();
+
+historySteps.value = [
+  {
+    id: 1,
+    indexFrom: 1,
+    indexTo: 2,
+  },
+  {
+    id: 2,
+    indexFrom: 4,
+    indexTo: 2,
+  },
+  {
+    id: 3,
+    indexFrom: 10,
+    indexTo: 5,
+  },
+];
 </script>
 
 <template>

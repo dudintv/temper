@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Post } from "@/types";
+
+defineProps<{ item: Post }>();
+</script>
 
 <template>
-  <h1>SORTABLE LIST ITEM</h1>
+  <pre>{{ item.title }}</pre>
 </template>
 
 <style lang="scss" scoped></style>
