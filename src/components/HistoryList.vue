@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import type { HistoryStep } from "@/types";
+import { storeToRefs } from "pinia";
 import HistoryListItem from "./HistoryListItem.vue";
+import { usePostsStore } from "@/stores/posts";
 
-defineProps<{ items: HistoryStep[] }>();
+const postStore = usePostsStore();
+const { historySteps } = storeToRefs(postStore);
 
 function stepTo(stepId: number) {
   console.log(stepId);
@@ -14,10 +16,14 @@ function stepTo(stepId: number) {
     <h1 class="px-4 py-6 text-2xl leading-tight">List of actions committed</h1>
     <div class="p-4 bg-back">
       <ul
-        v-if="items?.length"
+        v-if="historySteps?.length"
         class="flex flex-col bg-white/50 shadow-md hover:shadow-lg rounded overflow-clip transition-all"
       >
-        <li v-for="step in items" :key="step.id" class="border-slate-200 border-b last:border-b-0 hover:bg-white">
+        <li
+          v-for="step in historySteps"
+          :key="step.id"
+          class="border-slate-200 border-b last:border-b-0 hover:bg-white"
+        >
           <HistoryListItem :item="step" @stepTo="stepTo(step.id)" />
         </li>
       </ul>

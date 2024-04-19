@@ -1,16 +1,33 @@
 <script setup lang="ts">
 import type { Post } from "@/types";
+import { storeToRefs } from "pinia";
 import SortableListItem from "./SortableListItem.vue";
+import { usePostsStore } from "@/stores/posts";
 
-defineProps<{ items: Post[] }>();
+const postStore = usePostsStore();
+const { posts } = storeToRefs(postStore);
+await postStore.getFirstPosts();
+
+function movePostUp(post: Post) {
+  postStore.movePostUp(post.id);
+}
+function movePostDown(post: Post) {
+  postStore.movePostDown(post.id);
+}
 </script>
 
 <template>
   <div class="w-full">
     <h1 class="text-2xl mb-4 text-white leading-tight">Sortable Post List</h1>
-    <ul v-if="items?.length" class="flex flex-col gap-4 w-full items-stretch">
-      <li v-for="(post, index) in items" :key="post.id" class="bg-back rounded">
-        <SortableListItem :item="post" :is-first="index === 0" :is-last="index === items.length - 1" />
+    <ul v-if="posts?.length" class="flex flex-col gap-4 w-full items-stretch">
+      <li v-for="(post, index) in posts" :key="post.id" class="bg-back rounded">
+        <SortableListItem
+          :item="post"
+          :is-first="index === 0"
+          :is-last="index === posts.length - 1"
+          @up="movePostUp(post)"
+          @down="movePostDown(post)"
+        />
       </li>
     </ul>
     <div v-else>
