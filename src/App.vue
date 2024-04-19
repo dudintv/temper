@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MainLayout from "@/layouts/MainLayout.vue";
+import SortablePage from "@/pages/SortablePage.vue";
+</script>
 
 <template>
-  <div class="text-red-500">TEST</div>
+  <MainLayout>
+    <SortablePage />
+  </MainLayout>
 </template>
 
 <style scoped></style>
