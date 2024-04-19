@@ -5,7 +5,10 @@ import SortablePage from "@/pages/SortablePage.vue";
 
 <template>
   <MainLayout>
-    <SortablePage />
+    <Suspense>
+      <SortablePage />
+      <template #fallback> Loading... </template>
+    </Suspense>
   </MainLayout>
 </template>
 

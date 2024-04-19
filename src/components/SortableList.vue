@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Post } from "@/types";
+
+defineProps<{ items: Post[] }>();
+</script>
 
 <template>
   <h1>SORTABLE LIST</h1>

@@ -1,12 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="w-full mix-h-screen">
-    <div class="bg-[#6357b1] absolute top-0 left-0 right-0 h-60 diagonal-clip-path"></div>
-    <div class="container mx-auto">
-      <slot />
+  <main class="w-full mix-h-screen grid grid-cols-1 grid-rows-1">
+    <div class="diagonal-clip-path bg-[#6357b1] h-60 col-span-full row-span-full opacity-90" />
+    <div class="container mx-auto col-span-full row-span-full z-10 py-16">
+      <slot name="default" />
     </div>
-  </div>
+  </main>
 </template>
 
 <style scoped>

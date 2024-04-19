@@ -1,7 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { storeToRefs } from "pinia";
+import SortableList from "@/components/SortableList.vue";
+import HistoryList from "@/components/HistoryList.vue";
+import { usePostsStore } from "@/stores/posts";
+
+const postStore = usePostsStore();
+const { posts, historySteps } = storeToRefs(postStore);
+await postStore.getFirstPosts();
+</script>
 
 <template>
-  <h1>SORTABLE PAGE</h1>
+  <section class="flex justify-between">
+    <SortableList :items="posts" />
+    <HistoryList :items="historySteps" />
+  </section>
 </template>
 
 <style lang="scss" scoped></style>
