@@ -8,7 +8,7 @@ const emit = defineEmits(["stepTo"]);
 
 <template>
   <div class="appear-animation p-4 flex items-center justify-between gap-4 rounded transition-all leading-tight">
-    <span>Moved post {{ item.id }} from {{ item.indexFrom }} to {{ item.indexTo }}</span>
+    <span>Moved post {{ item.id }} from index {{ item.indexFrom }} to index {{ item.indexTo }}</span>
     <HistoryButton @click="emit('stepTo')" />
   </div>
 </template>
