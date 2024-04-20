@@ -5,7 +5,7 @@ const emit = defineEmits(["up", "down"]);
 
 <template>
   <div class="grid grid-cols-1 grid-rows-2 text-primary">
-    <div v-if="!hideUp" class="arrow-button row-start-1" @click="emit('up')">
+    <div v-if="!hideUp" class="arrow-button row-start-1" @click="emit('up')" data-testid="up-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
         <path
           fill="currentColor"
@@ -13,7 +13,7 @@ const emit = defineEmits(["up", "down"]);
         />
       </svg>
     </div>
-    <div v-if="!hideDown" class="arrow-button row-start-2" @click="emit('down')">
+    <div v-if="!hideDown" class="arrow-button row-start-2" @click="emit('down')" data-testid="down-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
         <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z" />
       </svg>

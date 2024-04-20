@@ -22,7 +22,7 @@ function movePostDown(post: Post) {
     <ul v-if="posts?.length" class="flex flex-col gap-4 max-w-lg items-stretch" v-auto-animate>
       <li v-for="(post, index) in posts" :key="post.id" class="bg-back rounded">
         <SortableListItem
-          :item="post"
+          :post="post"
           :is-first="index === 0"
           :is-last="index === posts.length - 1"
           @up="movePostUp(post)"
