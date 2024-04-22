@@ -35,3 +35,16 @@ And also, I used:
 * Pinia — to organize the data storage (I could also use VueQuery but I choose Pinia this time)
 * Vitest — a perfect accompaniment to Vite and it is very similar to Jest I used to work with
 * AutoAnimate — to automatically make re-sorting animations as it was in the requirements
+
+
+## Proeject structure
+
+* MailLayout
+  * SortablePage
+    * SortableList
+      * SortableItem
+        * SortableButton
+    * HistoryList
+      * HistoryListItem
+          * HistoryButton
+  
