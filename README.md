@@ -37,7 +37,7 @@ And also, I used:
 * AutoAnimate — to automatically make re-sorting animations as it was in the requirements
 
 
-## Proeject structure
+## The project structure
 
 * MailLayout
   * SortablePage
