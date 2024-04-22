@@ -12,7 +12,7 @@ const emit = defineEmits(["up", "down"]);
       <span class="flex-shrink-0">Post {{ post.id }}</span>
       <span class="text-slate-300 leading-tight">{{ post.title }}</span>
     </div>
-    <SortableButtons :hide-up="isFirst" :hide-down="isLast" @up="emit('up')" @down="emit('down')" />
+    <SortableButtons class="shrink-0" :hide-up="isFirst" :hide-down="isLast" @up="emit('up')" @down="emit('down')" />
   </div>
 </template>
 
