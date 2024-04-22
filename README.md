@@ -32,7 +32,7 @@ I used the major required tools:
 
 And also, I used:
 * Vite — to simplify the pipeline
-* Pinia — to organize the data storage (I could also use VueQuery but I choose Pinia this time)
+* Pinia — to organize the data storage (I could also use VueQuery but I choose Pinia this time to make it in a more "traditional" way)
 * Vitest — a perfect accompaniment to Vite and it is very similar to Jest I used to work with
 * AutoAnimate — to automatically make re-sorting animations as it was in the requirements
 
