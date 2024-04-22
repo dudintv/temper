@@ -36,6 +36,8 @@ And also, I used:
 * Vitest — a perfect accompaniment to Vite and it is very similar to Jest I used to work with
 * AutoAnimate — to automatically make re-sorting animations as it was in the requirements
 
+I manually made sorting and history keeping (I avoided using any library) to show some Typescript/Javascript skills.
+
 
 ## The project structure
 
